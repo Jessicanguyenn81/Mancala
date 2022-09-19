@@ -4,8 +4,24 @@
 }
 
 #board {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     height: 400px;
     width: 600px;
     margin: auto;
     background: url(https://i.imgur.com/raiPPvS.jpeg);
+}
+
+#scoreboard-1, #scoreboard-2 {
+    border: 2px solid red;
+    height: 100px;
+    width: 100px;
+}
+
+#both-players {
+    border: 2px solid red;
+    height: 100px;
+    width: 400px;
+
 }

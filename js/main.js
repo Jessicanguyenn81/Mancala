@@ -18,3 +18,11 @@ let turn, board, winner
 
 
   /*----- functions -----*/
+function init() {
+    board = [
+    // 0 element of the first array is mancala goal
+        [null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null]
+        // element 6 is the mancala goal for player 2
+    ]
+}
