@@ -22,13 +22,13 @@ const boardEl = document.getElementById('both-players')
 
   /*----- functions -----*/
 function init() {
+    turn = 1;
     board = [
     // 0 element of the first array is mancala goal
         [null, 4, 4, 4, 4, 4, 4],
         [4, 4, 4, 4, 4, 4, null]
     // element 6 is the mancala goal for player 2
     ];
-    turn = 1;
     winner = null;
     render();
 }
