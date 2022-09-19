@@ -14,7 +14,7 @@ let turn, board, winner
   /*----- cached elements  -----*/
 const messageDisplayEl = document.querySelector('h2')
 const resetBtnEl = document.querySelector('button')
-const boardEl = document.querySelectorAll('.pod')
+const boardEl = document.getElementById('both-players')
   /*----- event listeners -----*/
   resetBtnEl.addEventListener('click', handleResetClick)
   
@@ -38,6 +38,6 @@ function handleResetClick(){
 }
 
 function handleBoardClick() {
-    console.log('board was clicked')
+    console.log('Board was clicked')
 }
 
