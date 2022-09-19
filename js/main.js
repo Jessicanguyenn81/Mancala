@@ -37,7 +37,7 @@ function handleResetClick(){
     console.log('Reset Button clicked')
 }
 
-function handleBoardClick() {
-    console.log('Board was clicked')
+function handleBoardClick(evt) {
+    console.log(evt.target)
 }
 
