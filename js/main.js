@@ -12,10 +12,13 @@ const PLAYER_LOOKUP = {
 let turn, board, winner
 
   /*----- cached elements  -----*/
-
-
+const messageDisplayEl = document.querySelector('h2')
+const resetBtnEl = document.querySelector('button')
+const boardEl = document.querySelector('board')
   /*----- event listeners -----*/
+  resetBtnEl.addEventListener('click', handleResetClick)
 
+  boardEl.addEventListener('click', handleBoardClick)
 
   /*----- functions -----*/
 function init() {
