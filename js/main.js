@@ -14,10 +14,10 @@ let turn, board, winner
   /*----- cached elements  -----*/
 const messageDisplayEl = document.querySelector('h2')
 const resetBtnEl = document.querySelector('button')
-const boardEl = document.querySelector('board')
+const boardEl = document.querySelectorAll('.pod')
   /*----- event listeners -----*/
   resetBtnEl.addEventListener('click', handleResetClick)
-
+  
   boardEl.addEventListener('click', handleBoardClick)
 
   /*----- functions -----*/
@@ -32,3 +32,12 @@ function init() {
     winner = null;
     render();
 }
+
+function handleResetClick(){
+    console.log('Reset Button clicked')
+}
+
+function handleBoardClick() {
+    console.log('board was clicked')
+}
+

@@ -2,6 +2,10 @@
     box-sizing: border-box;
     margin: 0;
 }
+body {
+    text-align: center;
+}
+
 
 #board {
     display: flex;
@@ -20,17 +24,24 @@
 }
 
 #both-players {
-    border: 2px solid red;
+    border: 2px solid orange;
     height: 100px;
     width: 400px;
-}
+    text-align: center;
+} 
 
 .pod-a {
     border: 22px solid blue;
     display: inline-block;
 }
+
 .pod-b {
     border: 22px solid green;
-    display: inline-block;
+    display:inline-block
+}
+
+
+#message-box {
+    height: 75px ;
 }
 
