@@ -21,8 +21,11 @@ let turn, board, winner
 function init() {
     board = [
     // 0 element of the first array is mancala goal
-        [null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null]
-        // element 6 is the mancala goal for player 2
+        [null, 4, 4, 4, 4, 4, 4],
+        [4, 4, 4, 4, 4, 4, null]
+    // element 6 is the mancala goal for player 2
     ]
+    turn = 1
+    winner = null
+    render()
 }
