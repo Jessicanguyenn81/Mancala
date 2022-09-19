@@ -27,8 +27,8 @@ function init() {
         [null, 4, 4, 4, 4, 4, 4],
         [4, 4, 4, 4, 4, 4, null]
     // element 6 is the mancala goal for player 2
-    ]
-    turn = 1
-    winner = null
-    render()
+    ];
+    turn = 1;
+    winner = null;
+    render();
 }
