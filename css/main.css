@@ -3,3 +3,9 @@
     margin: 0;
 }
 
+#board {
+    height: 400px;
+    width: 600px;
+    margin: auto;
+    background: url(https://i.imgur.com/raiPPvS.jpeg);
+}
