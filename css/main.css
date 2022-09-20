@@ -33,11 +33,14 @@ body {
 .pod-a {
     border: 22px solid blue;
     display: inline-block;
+    border-radius: 50% ;
 }
 
 .pod-b {
     border: 22px solid green;
-    display:inline-block
+    display:inline-block;
+    border-radius: 50%;
+    
 }
 
 

@@ -8,6 +8,8 @@ const PLAYER_LOOKUP = {
     }
 }
 
+
+
   /*----- state variables -----*/
 let turn, board, winner
 
@@ -23,12 +25,7 @@ const boardEl = document.getElementById('both-players')
   /*----- functions -----*/
 function init() {
     turn = 1;
-    board = [
-    // 0 element of the first array is mancala goal
-        [null, 4, 4, 4, 4, 4, 4],
-        [4, 4, 4, 4, 4, 4, null]
-    // element 6 is the mancala goal for player 2
-    ];
+    board = [4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 0];
     winner = null;
     render();
 }
@@ -40,4 +37,30 @@ function handleResetClick(){
 function handleBoardClick(evt) {
     console.log(evt.target)
 }
+
+function render() {
+    messageDisplayEl.innerText = `${PLAYER_LOOKUP[turn].name}'s Turn `
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function dropMarbles(pod) {
+//     let idx = pod.dataset.number;
+//     let turn = pod.classList.contains('pod');
+//     let marbles = board [idx];
+//     board[idx]= 0; 
+// }
+
 
