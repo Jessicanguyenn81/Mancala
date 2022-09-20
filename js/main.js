@@ -1,14 +1,8 @@
  /*----- constants -----*/
 const PLAYER_LOOKUP = {
-    '1': {
-        name: 'Player 1'
-    },
-    '-1': {
-        name: 'Player 2'
-    }
+    '1' : 'Player 1',
+    '-1' : 'Player 2'
 }
-
-
 
   /*----- state variables -----*/
 let turn, board, winner
@@ -16,7 +10,7 @@ let turn, board, winner
   /*----- cached elements  -----*/
 const messageDisplayEl = document.querySelector('h2')
 const resetBtnEl = document.querySelector('button')
-const boardEl = document.getElementById('both-players')
+const boardEl = document.getElementById('board')
   /*----- event listeners -----*/
   resetBtnEl.addEventListener('click', handleResetClick)
   
@@ -35,32 +29,26 @@ function handleResetClick(){
 }
 
 function handleBoardClick(evt) {
-    console.log(evt.target)
-}
-
-function render() {
-    messageDisplayEl.innerText = `${PLAYER_LOOKUP[turn].name}'s Turn `
+//this shows which pod was clicked 
+    console.log(evt.target.id)
+    let bowlId = evt.target.id
+    if(winner) return; 
+    let currentIndex = bowlId
+    let currrentCount = board[bowlId]
     
 }
 
 
 
+function render() {
+    messageDisplayEl.innerText = `${PLAYER_LOOKUP[1]}'s Turn `
+    // pseudocode update board state to show current value of each pod on board
+    //pseudocode let marbles = the value inside each pod
+    board.forEach((bowl, idx) => {
+        if(bowl){
+            
+        } else {
 
-
-
-
-
-
-
-
-
-
-
-// function dropMarbles(pod) {
-//     let idx = pod.dataset.number;
-//     let turn = pod.classList.contains('pod');
-//     let marbles = board [idx];
-//     board[idx]= 0; 
-// }
-
-
+        }
+    })
+}
