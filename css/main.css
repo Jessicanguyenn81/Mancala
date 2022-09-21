@@ -17,7 +17,7 @@ body {
     background: url(https://i.imgur.com/raiPPvS.jpeg);
 }
 
-#scoreboard-1, #scoreboard-2 {
+#scoreboard1, #scoreboard2 {
     border: 2px solid red;
     height: 150px;
     width: 100px;

@@ -17,7 +17,9 @@ const boardEl = document.getElementById('board')
   boardEl.addEventListener('click', handleBoardClick)
 
   /*----- functions -----*/
-function init() {
+  init()
+  
+  function init() {
     turn = 1;
     board = [4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 0];
     winner = null
@@ -60,10 +62,26 @@ function handleBoardClick(evt) {
             currentCount--
             currentIndex++
         }
-        
-}}
+    }
 
-init()
+}
+
+// function scoreBoard() {
+//     document.querySelector(scoreboard1) = `Player 1: ${board[6]}`;
+//     document.querySelector(scoreboard2)= `Player 2: ${board[13]}`;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
