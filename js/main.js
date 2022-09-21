@@ -32,6 +32,7 @@ function handleResetClick(){
 
 
 function handleBoardClick(evt) {
+    //returnIds is so when you click it doesn't affect anything besides the pods
     const returnIds = ['scoreboard1', '13', 'player-one', 'player-two', 'scoreboard2', '6']
     const startingIdx = evt.target.id
     if (returnIds.includes(startingIdx) || !board[startingIdx]) return 
@@ -39,6 +40,7 @@ function handleBoardClick(evt) {
     let currentIdx = Number(startingIdx) + 1
     board[startingIdx] = 0
     for (let i = 0; i < numOfMoves; i++) {
+        //this allows player 1 to skip idx 13 mancala and player 2 to skip 
         const skip = (turn === 1 && currentIdx === 13) || (turn === -1 && currentIdx === 6)
         if (skip) {
             i -= 1
@@ -52,17 +54,37 @@ function handleBoardClick(evt) {
             }
     } 
     turn *= -1
+    checkWin()
     render()
    
 }
 
 
-
 function render() {
-    messageDisplayEl.innerText = `${PLAYER_LOOKUP[1]}'s Turn `
-    // pseudocode update board state to show current value of each pod on board
-    //pseudocode let marbles = the value inside each pod
+    if (turn === 1){
+        messageDisplayEl.innerText = `${PLAYER_LOOKUP[1]}'s Turn `      
+    } else {
+        messageDisplayEl.innerText = `${PLAYER_LOOKUP[-1]}'s Turn ` 
+    }
     board.forEach((bowl, idx) => {
         document.getElementById(idx).innerText = bowl
     })
 }
+
+function checkWin() {
+    if (board[0] === 0 && board[1] === 0 && board[2] === 0 && board[3] === 0 && board[4] === 0 && board[5] === 0) {
+        if (board[6] > board[13]) {
+            return 1;
+        } else {
+            return -1;
+        }
+    } else if (board[7] === 0 && board[8] === 0 && board[9] === 0 && board[10] === 0 && board[11] === 0 && board[12] === 0) {
+        if (board[6] > board[13]) {
+            return 1;
+        } else {
+            return -1;
+        }
+    } else {
+        return false;
+    }
+};
