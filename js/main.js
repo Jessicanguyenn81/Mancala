@@ -14,19 +14,21 @@ const boardEl = document.getElementById('board')
   /*----- event listeners -----*/
   resetBtnEl.addEventListener('click', handleResetClick)
   
-  boardEl.addEventListener('click', handleBoardClick)
+//   boardEl.addEventListener('click', handleBoardClick)
 
   /*----- functions -----*/
-  init()
+  init() 
 
   function init() {
     turn = 1;
     board = [4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 0];
-    winner = null
-    render()
+    winner = 0
+    boardEl.addEventListener('click', handleBoardClick)
+    render(winner);
 }
 
 function handleResetClick(){
+    init()
     console.log('Reset Button clicked')
 }
 
@@ -54,38 +56,64 @@ function handleBoardClick(evt) {
             }
     } 
     turn *= -1
-    checkWin()
-    render()
-   
-}
+    winner = checkWin()
+    render(winner);
+} 
 
 
-function render() {
-    if (turn === 1){
-        messageDisplayEl.innerText = `${PLAYER_LOOKUP[1]}'s Turn `      
+function render(winner) {
+    if (winner === 0) {
+        if (turn === 1) {
+            messageDisplayEl.innerText = `${PLAYER_LOOKUP[1]}'s Turn `      
+        } else {
+            messageDisplayEl.innerText = `${PLAYER_LOOKUP[-1]}'s Turn ` 
+        }
+    } else if (winner === 2) {
+        messageDisplayEl.innerText = "It's a Draw"
+        boardEl.removeEventListener('click', handleBoardClick)
     } else {
-        messageDisplayEl.innerText = `${PLAYER_LOOKUP[-1]}'s Turn ` 
+        messageDisplayEl.innerText = `${PLAYER_LOOKUP[winner]} Wins! `      
+        boardEl.removeEventListener('click', handleBoardClick)
     }
     board.forEach((bowl, idx) => {
         document.getElementById(idx).innerText = bowl
     })
+
 }
 
 function checkWin() {
-    if (board[0] === 0 && board[1] === 0 && board[2] === 0 && board[3] === 0 && board[4] === 0 && board[5] === 0) {
-        if (board[6] > board[13]) {
-            return 1;
-        } else {
-            return -1;
+    let player1Win = 0
+    let player2Win = 0
+    for (let i= 0; i <= 5; i++){
+        if (board[i] === 0) {
+            player1Win += 1
+        } 
+        if (board[i + 7] === 0) {
+            player2Win += 1
         }
-    } else if (board[7] === 0 && board[8] === 0 && board[9] === 0 && board[10] === 0 && board[11] === 0 && board[12] === 0) {
-        if (board[6] > board[13]) {
-            return 1;
-        } else {
-            return -1;
-        }
-    } else {
-        return false;
     }
+    if (player1Win === 6) {
+        if (board[6] > board[13]) {
+             return 1;
+        } else if (board[6] === board [13]) {
+            return 2;
+        }  else {
+            return -1;
+        }
+    }
+
+    if (player2Win === 6) {
+        if (board[13] > board[6]) {
+             return -1;
+        } else if (board[6] === board [13]) {
+            return 2;
+        } else {
+            return 1;
+        }
+    }
+
+    return 0;
 }
+
+
 
