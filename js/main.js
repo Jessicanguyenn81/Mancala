@@ -101,7 +101,7 @@ function checkWin() {
             return -1;
         }
     }
-
+    
     if (player2Win === 6) {
         if (board[13] > board[6]) {
              return -1;
