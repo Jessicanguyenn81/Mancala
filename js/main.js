@@ -87,4 +87,5 @@ function checkWin() {
     } else {
         return false;
     }
-};
+}
+
