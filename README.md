@@ -19,4 +19,5 @@ https://jessicanguyenn81.github.io/Mancala/
 # Next Steps (Icebox Items)
 - Add marble images and animation
 - Allow user to choose which player they want to be or have a randomized selection of which player goes first.
+- When player's turn they are only able to select marbles from their pods not their opponents 
 
